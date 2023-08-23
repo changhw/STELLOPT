@@ -17,7 +17,7 @@
   PRECOMP:= cpp -traditional-cpp -E -P -C -DMACOSX
   COMPILE = gfortran
   COMPILE_FREE = gfortran -ffree-form -ffree-line-length-none \
-                          -ffixed-line-length-none
+                          -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = gfortran $(FLAGS) -o
   LINK_AR = ar -ruvs
   LINK_C  = gcc -Wl,-no_compact_unwind
@@ -25,8 +25,8 @@
 #######################################################################
 #            Define Compiler Flags
 #######################################################################
-  FLAGS_R = -O2 -g -fexternal-blas -fbacktrace -fcheck=all,no-array-temps
-  FLAGS_D = -O0 -g -fexternal-blas -fbacktrace -fcheck=all,no-array-temps -fbounds-check
+  FLAGS_R = -O2 -g -fexternal-blas -fbacktrace -fcheck=all,no-array-temps -fallow-argument-mismatch
+  FLAGS_D = -O0 -g -fexternal-blas -fbacktrace -fcheck=all,no-array-temps -fallow-argument-mismatch -fbounds-check
   LIBS    = -L/usr/lib -L/opt/local/lib -lopenblas -lscalapack
   FLAGS_R += -fallow-argument-mismatch
   FLAGS_D += -fallow-argument-mismatch
@@ -38,7 +38,7 @@
   LMPI    = T
   MPI_COMPILE = mpif90
   MPI_COMPILE_FREE = mpif90 -ffree-form -ffree-line-length-none \
-                            -ffixed-line-length-none 
+                            -ffixed-line-length-none -fallow-argument-mismatch 
   MPI_COMPILE_C = mpicc 
   MPI_LINK = mpif90 -Wl,-no_compact_unwind
   MPI_RUN = mpiexec

@@ -6,7 +6,7 @@
   MYHOME = $(HOME)/bin
   PRECOMP:= /usr/bin/cpp -traditional -DLINUX
   COMPILE = $(FC)
-  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = ld $(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = $(CC) -shared -Wl,-z-defs
@@ -24,7 +24,7 @@
   LMPI    = T
   MPI_COMPILE = mpif90
   MPI_COMPILE_FREE = mpif90 -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = mpicc.openmpi
   MPI_LINK = mpif90
   MPI_RUN = mpiexec

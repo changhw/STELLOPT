@@ -7,7 +7,7 @@
   PRECOMP:= cpp -traditional -DLINUX
   COMPILE = gfortran
   COMPILE_FREE = gfortran -ffree-form -ffree-line-length-none \
-                          -ffixed-line-length-none
+                          -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = gfortran -$(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = gcc -shared -Wl,-no_compact_unwind
@@ -33,7 +33,7 @@
   LMPI    = T
   MPI_COMPILE = mpigfortran
   MPI_COMPILE_FREE = mpigfortran -ffree-form -ffree-line-length-none \
-                            -ffixed-line-length-none
+                            -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = mpigcc
   MPI_LINK = mpigcc
   MPI_RUN = srun

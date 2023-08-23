@@ -25,7 +25,7 @@ GCC49_HOME=/usr/lib/gcc/x86_64-linux-gnu/4.9
   MYHOME = $(HOME)/bin
   PRECOMP:= /lib/cpp -traditional -DLINUX
   COMPILE = $(FC)
-  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = ld $(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = $(CC) -shared -Wl,-z-defs
@@ -47,7 +47,7 @@ GCC49_HOME=/usr/lib/gcc/x86_64-linux-gnu/4.9
   LMPI    = T
   MPI_COMPILE = $(MPIHOME)/bin/mpif90
   MPI_COMPILE_FREE = $(MPIHOME)/bin/mpif90 -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = $(MPIHOME)/bin/mpicc
   MPI_LINK = $(MPIHOME)/bin/mpif90
   MPI_RUN = mpiexec
@@ -59,7 +59,7 @@ GCC49_HOME=/usr/lib/gcc/x86_64-linux-gnu/4.9
   # For GCC6
   #MPI_COMPILE = mpif90
   #MPI_COMPILE_FREE = mpif90 -ffree-form \
-  #                   -ffree-line-length-none -ffixed-line-length-none
+  #                   -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   #MPI_COMPILE_C = mpicc
   #MPI_LINK = mpif90
 

@@ -35,7 +35,7 @@ GENE_HOME =
   PRECOMP:= /usr/bin/cpp -traditional -DLINUX
   COMPILE_C = gcc
   COMPILE = gfortran
-  COMPILE_FREE = $(COMPILE) -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = $(COMPILE) -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = ld $(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = $(COMPILE_C) -shared -Wl,-z-defs
@@ -54,7 +54,7 @@ GENE_HOME =
   LMPI    = T
   MPI_COMPILE = $(MPI_HOME)/bin/mpif90
   MPI_COMPILE_FREE = $(MPI_COMPILE) -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = $(MPI_HOME)/bin/mpicc
   MPI_LINK = $(MPI_HOME)/bin/mpif90
   MPI_RUN = mpiexec

@@ -25,7 +25,7 @@ SILOHOME = /usr
   MYHOME = $(HOME)/bin
   PRECOMP:= /lib/cpp -traditional -DLINUX
   COMPILE = $(FC)
-  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = ld $(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = $(CC) -shared -Wl,--no-undefined -Wl,-export-dynamic
@@ -46,7 +46,7 @@ SILOHOME = /usr
   LMPI    = T
   MPI_COMPILE = mpif90
   MPI_COMPILE_FREE = mpif90 -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = mpicc
   MPI_LINK = mpicc -shared -pthread -Wl,--no-undefined -Wl,-export-dynamic
   MPI_RUN = mpiexec

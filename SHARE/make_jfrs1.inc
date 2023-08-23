@@ -25,7 +25,7 @@
   LMPI    = T
   MPI_COMPILE = ftn
   MPI_COMPILE_FREE = ftn -ffree-form -ffree-line-length-none \
-                        -ffixed-line-length-none
+                        -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = cc
   MPI_LINK = ftn -fbacktrace
   MPI_RUN = srun

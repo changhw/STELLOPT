@@ -18,7 +18,7 @@
   PWD1 = `pwd`
   PRECOMP:= cpp -traditional-cpp -E -P -C -DMACOSX
   COMPILE = gfortran
-  COMPILE_FREE = gfortran -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = gfortran -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = mpif90-mpich-gcc8 $(FLAGS) -o
   LINK_AR = ar -ruvs
   LINK_C  = gcc -shared -Wl,-no_compact_unwind
@@ -45,7 +45,7 @@
   LMPI    = T
   MPI_COMPILE = mpif90-mpich-gcc8 -g
   MPI_COMPILE_FREE = mpif90-mpich-gcc8 -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none -g
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch -g
   MPI_COMPILE_C = mpicc-mpich-gcc8
   MPI_LINK = mpif90-mpich-gcc8
   MPI_LINK = mpif90-mpich-gcc8 -shared  -Wl,-no_compact_unwind

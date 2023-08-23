@@ -6,7 +6,7 @@
   MYHOME = $(HOME)/bin
   PRECOMP:= /lib/cpp -traditional -DLINUX
   COMPILE = $(FC)
-  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none
+  COMPILE_FREE = $(FC) -ffree-form -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   LINK    = ld $(FLAGS) -o
   LINK_AR = ar -ruv
   LINK_C  = $(CC) -shared -Wl,-z-defs
@@ -14,7 +14,7 @@
 #######################################################################
 #            Define Compiler Flags
 #######################################################################
-  FLAGS_R = -O2 -fexternal-blas -fbacktrace -fcheck=all,no-array-temps
+  FLAGS_R = -O2 -fexternal-blas -fbacktrace -fcheck=all,no-array-temps -fallow-argument-mismatch
   FLAGS_D = -g -O0 -fexternal-blas -fbacktrace -fcheck=all 
   LIBS    = -L/usr/lib -lblas -llapack -lscalapack-openmpi
   FLAGS_R += -Wno-argument-mismatch
@@ -26,7 +26,7 @@
   LMPI    = T
   MPI_COMPILE = mpif90.openmpi
   MPI_COMPILE_FREE = mpif90 -ffree-form \
-                     -ffree-line-length-none -ffixed-line-length-none
+                     -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch
   MPI_COMPILE_C = mpicc.openmpi
   MPI_LINK = mpif90.openmpi
   MPI_RUN = mpiexec
